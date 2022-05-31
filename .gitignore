@@ -28,7 +28,6 @@ hs_err_pid*
 .DS_Store
 .AppleDouble
 .LSOverride
-.idea
 
 # Icon must end with two \r
 Icon
@@ -51,4 +50,18 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+**/logs/
+
+.settings
+bin
+.project*
+.classpath
+.idea/
 
