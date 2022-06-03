@@ -1,8 +1,9 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Game;
 
-public final class Even extends Engine {
+public final class Even extends Engine implements Game {
 
     public static final int GAME_CODE = 2;
     private static final String POSITIVE_ANSWER = "yes";

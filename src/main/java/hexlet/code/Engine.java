@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Engine {
+public class Engine implements EngineInterface {
 
     public static final int GREET_CODE = 1;
 

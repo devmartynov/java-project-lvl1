@@ -6,3 +6,6 @@
 
 #### Calculator game example
 [![asciicast](https://asciinema.org/a/PDf5gHLJBrjnb7yYUtZhdUUWY.png)](https://asciinema.org/a/PDf5gHLJBrjnb7yYUtZhdUUWY)
+
+#### GCD game example
+[![asciicast](https://asciinema.org/a/afRGhWgRJzu3KiPgFpsahznXk.png)](https://asciinema.org/a/afRGhWgRJzu3KiPgFpsahznXk)
