@@ -24,6 +24,9 @@ public class App {
                 evenGame.start();
                 break;
             }
+
+            default -> {
+            }
         }
     }
 }

@@ -3,10 +3,12 @@ package hexlet.code;
 import java.util.Scanner;
 import java.util.Random;
 
-public class Even extends Game implements Playable {
+public final class Even extends Game implements Playable {
     private static final String POSITIVE_ANSWER = "yes";
     private static final String NEGATIVE_ANSWER = "no";
     private static final int CORRECT_ANSWERS_COUNT_TO_WIN = 3;
+
+    private static final int RANDOM_MAX_VALUE = 100;
     private int correctAnswersCount = 0;
 
     private final Random random = new Random();
@@ -15,7 +17,9 @@ public class Even extends Game implements Playable {
     public void start() {
         this.greet();
 
-        System.out.println("Answer \'" + POSITIVE_ANSWER + "\' if number even otherwise answer \'" + NEGATIVE_ANSWER + "\'.");
+        System.out.println(
+                "Answer \'" + POSITIVE_ANSWER + "\' if number even otherwise answer \'" + NEGATIVE_ANSWER + "\'."
+        );
 
         runRound(generateRandomNumber());
     }
@@ -33,11 +37,15 @@ public class Even extends Game implements Playable {
     }
 
     private void showCheckResultMessage(boolean isPositiveCheck, String expectedAnswer, String answer) {
-        System.out.println(isPositiveCheck ? "Correct!" : "\'" + answer + "\' is wrong answer ;(. Correct answer was \'" + expectedAnswer + "\'.");
+        System.out.println(
+                isPositiveCheck
+                        ? "Correct!"
+                        : "\'" + answer + "\' is wrong answer ;(. Correct answer was \'" + expectedAnswer + "\'."
+        );
     }
 
     private int generateRandomNumber() {
-        return this.random.nextInt(100);
+        return this.random.nextInt(RANDOM_MAX_VALUE);
     }
 
     private boolean formatAnswerToGameFormat(String answer) {
@@ -49,7 +57,10 @@ public class Even extends Game implements Playable {
     }
 
     private void finish(boolean isWin) {
-        System.out.println(isWin ? "Congratulations, " + getUserName() + "!" : "Let's try again, " + getUserName() + "!");
+        System.out.println(isWin
+                ? "Congratulations, " + getUserName() + "!"
+                : "Let's try again, " + getUserName() + "!"
+        );
     }
 
     private boolean runRound(int number) {
