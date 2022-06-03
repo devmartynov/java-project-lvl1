@@ -4,4 +4,7 @@ run-dist:
 build:
 	./gradlew installDist
 
+check-style:
+	./gradlew checkstyleMain
+
 .PHONY: build
