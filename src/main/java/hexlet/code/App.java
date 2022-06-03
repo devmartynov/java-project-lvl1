@@ -1,10 +1,14 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
+import hexlet.code.games.Even;
+
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] arg) {
         System.out.println("Please enter the game number and press Enter.");
+        System.out.println("3 - Calculator");
         System.out.println("2 - Even");
         System.out.println("1 - Greet");
         System.out.println("0 - Exit");
@@ -14,15 +18,16 @@ public class App {
         System.out.println();
 
         switch (taskNumber) {
-            case 1 -> {
-                Game notifier = new Game();
-                notifier.greet();
-                break;
+            case Engine.GREET_CODE -> {
+                Engine.greet();
             }
-            case 2 -> {
+            case Even.GAME_CODE -> {
                 Even evenGame = new Even();
                 evenGame.start();
-                break;
+            }
+            case Calculator.GAME_CODE -> {
+                Calculator calculatorGame = new Calculator();
+                calculatorGame.start();
             }
 
             default -> {
