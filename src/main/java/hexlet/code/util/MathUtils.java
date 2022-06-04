@@ -3,7 +3,7 @@ package hexlet.code.util;
 import java.util.Random;
 
 public class MathUtils {
-    public static final String[] MATH_OPERATORS = {"+", "-", "*", "/"};
+    public static final String[] MATH_OPERATORS = {"+", "-", "*"};
 
     /**
      * Upper bound of random range.
