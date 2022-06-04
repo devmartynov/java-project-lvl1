@@ -86,7 +86,7 @@ public class MathUtils {
      * @return boolean
      */
     public static boolean isPrime(int number) {
-        if (number == 1) {
+        if (number < 2) {
             return false;
         }
 

@@ -14,6 +14,7 @@ public class MathUtilsTest {
         assertThat(MathUtils.isPrime(19)).isTrue();
         assertThat(MathUtils.isPrime(233)).isTrue();
 
+        assertThat(MathUtils.isPrime(0)).isFalse();
         assertThat(MathUtils.isPrime(9)).isFalse();
         assertThat(MathUtils.isPrime(1)).isFalse();
         assertThat(MathUtils.isPrime(6)).isFalse();
