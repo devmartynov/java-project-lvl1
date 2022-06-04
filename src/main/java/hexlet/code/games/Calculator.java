@@ -1,10 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.GameEngine;
 import hexlet.code.Game;
 import hexlet.code.util.MathUtils;
 
-public final class Calculator extends Engine implements Game {
+public final class Calculator extends GameEngine implements Game {
     public static final int GAME_CODE = 3;
 
     public void start() {
@@ -17,9 +17,9 @@ public final class Calculator extends Engine implements Game {
             var num2 = MathUtils.generateRandomNumber();
             var operator = getRandomMathOperator();
 
-            var shouldContinue = super.runGameRound(
-                    num1 + " " + operator + " " + num2,
-                    String.valueOf(executeMathOperation(operator, num1, num2))
+            var shouldContinue = super.runRound(
+                num1 + " " + operator + " " + num2,
+                String.valueOf(executeMathOperation(operator, num1, num2))
             );
 
             if (!shouldContinue) {

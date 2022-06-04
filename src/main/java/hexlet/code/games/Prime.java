@@ -1,11 +1,11 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.GameEngine;
 import hexlet.code.Game;
 import hexlet.code.util.GameUtils;
 import hexlet.code.util.MathUtils;
 
-public final class Prime extends Engine implements Game {
+public final class Prime extends GameEngine implements Game {
     public static final int GAME_CODE = 6;
 
     public static final int MAX_RANDOM_VALUE = 30;
@@ -18,7 +18,7 @@ public final class Prime extends Engine implements Game {
         for (var i = 0; i < ROUNDS_COUNT; i++) {
             var num = MathUtils.generateRandomNumber(MAX_RANDOM_VALUE);
 
-            var shouldContinue = super.runGameRound(
+            var shouldContinue = super.runRound(
                 String.valueOf(num),
                 GameUtils.formatAnswerToUserFormat(MathUtils.isPrime(num))
             );

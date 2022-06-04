@@ -1,10 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.GameEngine;
 import hexlet.code.Game;
 import hexlet.code.util.MathUtils;
 
-public final class GCD extends Engine implements Game {
+public final class GCD extends GameEngine implements Game {
     public static final int GAME_CODE = 4;
 
     public void start() {
@@ -16,7 +16,7 @@ public final class GCD extends Engine implements Game {
             var num1 = MathUtils.generateRandomNumber();
             var num2 = MathUtils.generateRandomNumber();
 
-            var shouldContinue = super.runGameRound(
+            var shouldContinue = super.runRound(
                 num1 + " " + num2,
                 String.valueOf(MathUtils.gcd(num1, num2))
             );

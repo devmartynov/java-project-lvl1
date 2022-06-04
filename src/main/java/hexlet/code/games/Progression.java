@@ -1,10 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.GameEngine;
 import hexlet.code.Game;
 import hexlet.code.util.MathUtils;
 
-public final class Progression extends Engine implements Game {
+public final class Progression extends GameEngine implements Game {
     public static final int GAME_CODE = 5;
 
     public void start() {
@@ -20,7 +20,7 @@ public final class Progression extends Engine implements Game {
 
             progression[placeOfHiddenNumberInProgression] = "..";
 
-            var shouldContinue = super.runGameRound(String.join(" ", progression), expectedAnswer);
+            var shouldContinue = super.runRound(String.join(" ", progression), expectedAnswer);
 
             if (!shouldContinue) {
                 break;

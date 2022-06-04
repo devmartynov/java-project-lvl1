@@ -1,5 +1,5 @@
 package hexlet.code;
 
-public interface Game extends EngineInterface {
+public interface Game extends Engine {
     void start();
 }

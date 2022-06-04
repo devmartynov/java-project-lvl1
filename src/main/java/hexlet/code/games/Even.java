@@ -1,11 +1,11 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.GameEngine;
 import hexlet.code.Game;
 import hexlet.code.util.GameUtils;
 import hexlet.code.util.MathUtils;
 
-public final class Even extends Engine implements Game {
+public final class Even extends GameEngine implements Game {
 
     public static final int GAME_CODE = 2;
 
@@ -22,7 +22,7 @@ public final class Even extends Engine implements Game {
         for (var i = 0; i < ROUNDS_COUNT; i++) {
             var num = MathUtils.generateRandomNumber();
 
-            var shouldContinue = super.runGameRound(
+            var shouldContinue = super.runRound(
                 String.valueOf(num),
                 GameUtils.formatAnswerToUserFormat(MathUtils.isEven(num))
             );
