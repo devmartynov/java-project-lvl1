@@ -1,9 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
+import hexlet.code.games.Calculator;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.stream.IntStream;
 
@@ -15,6 +16,7 @@ public class GameFactory {
             Calculator.GAME_CODE,
             GCD.GAME_CODE,
             Progression.GAME_CODE,
+            Prime.GAME_CODE,
         };
         return IntStream.of(codes).anyMatch(_code -> _code == code);
     }
@@ -29,6 +31,9 @@ public class GameFactory {
             }
             case Progression.GAME_CODE -> {
                 return new Progression();
+            }
+            case Prime.GAME_CODE -> {
+                return new Prime();
             }
             default -> {
                 return new GCD();

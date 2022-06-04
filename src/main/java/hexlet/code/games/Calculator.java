@@ -2,12 +2,10 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Game;
-import hexlet.code.Utils;
+import hexlet.code.MathUtils;
 
 public final class Calculator extends Engine implements Game {
     public static final int GAME_CODE = 3;
-
-    private static final String[] MATH_OPERATORS = {"+", "-", "*", "/"};
 
     public void start() {
         greet();
@@ -15,13 +13,13 @@ public final class Calculator extends Engine implements Game {
         System.out.println("What is the result of the expression?");
 
         for (var i = 0; i < ROUNDS_COUNT; i++) {
-            var num1 = Utils.generateRandomNumber();
-            var num2 = Utils.generateRandomNumber();
-            var operation = getRandomMathOperator();
+            var num1 = MathUtils.generateRandomNumber();
+            var num2 = MathUtils.generateRandomNumber();
+            var operator = getRandomMathOperator();
 
             var shouldContinue = super.runGameRound(
-                    num1 + " " + operation + " " + num2,
-                    String.valueOf(executeMathOperation(operation, num1, num2))
+                    num1 + " " + operator + " " + num2,
+                    String.valueOf(executeMathOperation(operator, num1, num2))
             );
 
             if (!shouldContinue) {
@@ -31,39 +29,23 @@ public final class Calculator extends Engine implements Game {
     }
 
     private String getRandomMathOperator() {
-        return MATH_OPERATORS[Utils.generateRandomNumber(MATH_OPERATORS.length)];
+        return MathUtils.MATH_OPERATORS[MathUtils.generateRandomNumber(MathUtils.MATH_OPERATORS.length)];
     }
 
     private int executeMathOperation(String operation, int num1, int num2) {
         switch (operation) {
             case "+" -> {
-                return add(num1, num2);
+                return MathUtils.add(num1, num2);
             }
             case "-" -> {
-                return subtract(num1, num2);
+                return MathUtils.subtract(num1, num2);
             }
             case "*" -> {
-                return multiply(num1, num2);
+                return MathUtils.multiply(num1, num2);
             }
             default -> {
-                return divide(num1, num2);
+                return MathUtils.divide(num1, num2);
             }
         }
-    }
-
-    private static int add(int num1, int num2) {
-        return num1 + num2;
-    }
-
-    private static int subtract(int num1, int num2) {
-        return num1 - num2;
-    }
-
-    private static int multiply(int num1, int num2) {
-        return num1 * num2;
-    }
-
-    private static int divide(int num1, int num2) {
-        return num1 / num2;
     }
 }

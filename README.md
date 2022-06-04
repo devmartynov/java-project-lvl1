@@ -12,3 +12,6 @@
 
 #### Progression game example
 [![asciicast](https://asciinema.org/a/IYQpXudMkULrxlvPOPaEK7fU2.png)](https://asciinema.org/a/IYQpXudMkULrxlvPOPaEK7fU2)
+
+#### Prime game example
+[![asciicast](https://asciinema.org/a/bmTD85yKG4LQWvMOG7gvOgGIR.png)](https://asciinema.org/a/bmTD85yKG4LQWvMOG7gvOgGIR)
