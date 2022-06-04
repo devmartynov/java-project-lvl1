@@ -9,3 +9,6 @@
 
 #### GCD game example
 [![asciicast](https://asciinema.org/a/afRGhWgRJzu3KiPgFpsahznXk.png)](https://asciinema.org/a/afRGhWgRJzu3KiPgFpsahznXk)
+
+#### Progression game example
+[![asciicast](https://asciinema.org/a/IYQpXudMkULrxlvPOPaEK7fU2.png)](https://asciinema.org/a/IYQpXudMkULrxlvPOPaEK7fU2)

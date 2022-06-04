@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] arg) {
         System.out.println("Please enter the game number and press Enter.");
+        System.out.println("5 - Progression");
         System.out.println("4 - GCD");
         System.out.println("3 - Calculator");
         System.out.println("2 - Even");

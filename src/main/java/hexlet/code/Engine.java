@@ -67,7 +67,7 @@ public class Engine implements EngineInterface {
     /**
      * Generate random number up to maxValue.
      *
-     * @param maxValue
+     * @param maxValue upper bound of random range (excluded)
      * @return integer
      */
     public int generateRandomNumber(int maxValue) {

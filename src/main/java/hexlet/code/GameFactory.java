@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 
 import java.util.stream.IntStream;
 
@@ -13,6 +14,7 @@ public class GameFactory {
             Even.GAME_CODE,
             Calculator.GAME_CODE,
             GCD.GAME_CODE,
+            Progression.GAME_CODE,
         };
         return IntStream.of(codes).anyMatch(_code -> _code == code);
     }
@@ -25,7 +27,9 @@ public class GameFactory {
             case Calculator.GAME_CODE -> {
                 return new Calculator();
             }
-
+            case Progression.GAME_CODE -> {
+                return new Progression();
+            }
             default -> {
                 return new GCD();
             }
