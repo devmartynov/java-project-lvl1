@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Game;
-import hexlet.code.MathUtils;
+import hexlet.code.util.MathUtils;
 
 public final class GCD extends Engine implements Game {
     public static final int GAME_CODE = 4;

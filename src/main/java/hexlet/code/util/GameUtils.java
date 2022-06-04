@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.util;
 
 public final class GameUtils {
 

@@ -2,8 +2,8 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Game;
-import hexlet.code.GameUtils;
-import hexlet.code.MathUtils;
+import hexlet.code.util.GameUtils;
+import hexlet.code.util.MathUtils;
 
 public final class Prime extends Engine implements Game {
     public static final int GAME_CODE = 6;
