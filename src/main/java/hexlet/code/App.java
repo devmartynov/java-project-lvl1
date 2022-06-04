@@ -19,9 +19,16 @@ public class App {
 
         if (gameCode == Engine.GREET_CODE) {
             Engine.greet();
-        } else if (GameFactory.validateCode(gameCode)) {
-            Game game = GameFactory.getGame(gameCode);
-            game.start();
+        } else {
+            GameFactory factory = new ConsoleGameFactory();
+
+            try {
+                Game game = factory.createGame(gameCode);
+                game.start();
+            } catch (Exception error) {
+                System.out.println(error.toString());
+            }
+
         }
     }
 }
