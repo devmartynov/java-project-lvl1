@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Engine implements EngineInterface {
@@ -8,9 +7,6 @@ public class Engine implements EngineInterface {
     public static final int GREET_CODE = 1;
 
     public static final int ROUNDS_COUNT = 3;
-    public static final int RANDOM_MAX_VALUE = 100;
-
-    private final Random random = new Random();
 
     private static String userName;
 
@@ -52,26 +48,6 @@ public class Engine implements EngineInterface {
         showUserValidateMessage(true, expectedAnswer, userAnswer);
 
         return true;
-    }
-
-    /**
-     * Generate random number up to RANDOM_MAX_VALUE.
-     *
-     * @return integer
-     * @see #RANDOM_MAX_VALUE
-     */
-    public int generateRandomNumber() {
-        return random.nextInt(RANDOM_MAX_VALUE);
-    }
-
-    /**
-     * Generate random number up to maxValue.
-     *
-     * @param maxValue upper bound of random range (excluded)
-     * @return integer
-     */
-    public int generateRandomNumber(int maxValue) {
-        return random.nextInt(maxValue);
     }
 
     /**

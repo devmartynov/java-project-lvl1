@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Game;
+import hexlet.code.Utils;
 
 public final class Calculator extends Engine implements Game {
     public static final int GAME_CODE = 3;
@@ -14,8 +15,8 @@ public final class Calculator extends Engine implements Game {
         System.out.println("What is the result of the expression?");
 
         for (var i = 0; i < ROUNDS_COUNT; i++) {
-            var num1 = generateRandomNumber();
-            var num2 = generateRandomNumber();
+            var num1 = Utils.generateRandomNumber();
+            var num2 = Utils.generateRandomNumber();
             var operation = getRandomMathOperator();
 
             var shouldContinue = super.runGameRound(
@@ -30,7 +31,7 @@ public final class Calculator extends Engine implements Game {
     }
 
     private String getRandomMathOperator() {
-        return MATH_OPERATORS[generateRandomNumber(MATH_OPERATORS.length)];
+        return MATH_OPERATORS[Utils.generateRandomNumber(MATH_OPERATORS.length)];
     }
 
     private int executeMathOperation(String operation, int num1, int num2) {

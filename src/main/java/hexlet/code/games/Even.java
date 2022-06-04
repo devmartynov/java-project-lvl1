@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Game;
+import hexlet.code.Utils;
 
 public final class Even extends Engine implements Game {
 
@@ -13,11 +14,11 @@ public final class Even extends Engine implements Game {
         greet();
 
         System.out.println(
-                "Answer \'" + POSITIVE_ANSWER + "\' if number even otherwise answer \'" + NEGATIVE_ANSWER + "\'."
+                "Answer '" + POSITIVE_ANSWER + "' if number even otherwise answer '" + NEGATIVE_ANSWER + "'."
         );
 
         for (var i = 0; i < ROUNDS_COUNT; i++) {
-            var num = generateRandomNumber();
+            var num = Utils.generateRandomNumber();
 
             var shouldContinue = super.runGameRound(String.valueOf(num), formatAnswerToUserFormat(isEven(num)));
 

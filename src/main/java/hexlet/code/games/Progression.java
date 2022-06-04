@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Game;
+import hexlet.code.Utils;
 
 public final class Progression extends Engine implements Game {
     public static final int GAME_CODE = 5;
@@ -16,7 +17,7 @@ public final class Progression extends Engine implements Game {
         System.out.println("What number is missing in the progression?");
 
         for (var i = 0; i < ROUNDS_COUNT; i++) {
-            var placeOfHiddenNumberInProgression = generateRandomNumber(LENGTH_OF_PROGRESSION);
+            var placeOfHiddenNumberInProgression = Utils.generateRandomNumber(LENGTH_OF_PROGRESSION);
             String[] progression = generateProgression();
 
             var expectedAnswer = progression[placeOfHiddenNumberInProgression];
@@ -34,7 +35,7 @@ public final class Progression extends Engine implements Game {
 
     private String[] generateProgression() {
         String[] progression = new String[LENGTH_OF_PROGRESSION];
-        var firstNumberOfProgression = generateRandomNumber();
+        var firstNumberOfProgression = Utils.generateRandomNumber();
 
         for (var i = 0; i < LENGTH_OF_PROGRESSION; i++) {
             progression[i] = String.valueOf(getProgressionNumber(
