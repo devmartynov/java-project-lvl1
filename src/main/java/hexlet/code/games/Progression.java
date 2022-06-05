@@ -1,31 +1,31 @@
 package hexlet.code.games;
 
-import hexlet.code.GameEngine;
+import hexlet.code.Engine;
 import hexlet.code.Game;
 import hexlet.code.util.MathUtils;
 
-public final class Progression extends GameEngine implements Game {
+public final class Progression implements Game {
     public static final int GAME_CODE = 5;
 
+    private static final String RULES = "What number is missing in the progression?";
+
     public void start() {
-        greet();
+        System.out.println(RULES);
 
-        System.out.println("What number is missing in the progression?");
+        Engine.startGame(this);
+    }
 
-        for (var i = 0; i < ROUNDS_COUNT; i++) {
-            var placeOfHiddenNumberInProgression = MathUtils.generateRandomNumber(MathUtils.LENGTH_OF_PROGRESSION);
-            String[] progression = MathUtils.generateProgression();
+    public String[] getConditionAndExpectedResult() {
+        var placeOfHiddenNumberInProgression = MathUtils.generateRandomNumber(MathUtils.LENGTH_OF_PROGRESSION);
+        String[] progression = MathUtils.generateProgression();
 
-            var expectedAnswer = progression[placeOfHiddenNumberInProgression];
+        var expectedAnswer = progression[placeOfHiddenNumberInProgression];
 
-            progression[placeOfHiddenNumberInProgression] = "..";
+        progression[placeOfHiddenNumberInProgression] = "..";
 
-            var shouldContinue = super.runRound(String.join(" ", progression), expectedAnswer);
-
-            if (!shouldContinue) {
-                break;
-            }
-        }
-
+        return new String[]{
+            String.join(" ", progression),
+            expectedAnswer
+        };
     }
 }

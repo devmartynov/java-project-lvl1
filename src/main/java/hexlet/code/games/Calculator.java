@@ -1,31 +1,29 @@
 package hexlet.code.games;
 
-import hexlet.code.GameEngine;
+import hexlet.code.Engine;
 import hexlet.code.Game;
 import hexlet.code.util.MathUtils;
 
-public final class Calculator extends GameEngine implements Game {
+public final class Calculator implements Game {
     public static final int GAME_CODE = 3;
 
+    private static final String RULES = "What is the result of the expression?";
+
     public void start() {
-        greet();
+        System.out.println(RULES);
 
-        System.out.println("What is the result of the expression?");
+        Engine.startGame(this);
+    }
 
-        for (var i = 0; i < ROUNDS_COUNT; i++) {
-            var num1 = MathUtils.generateRandomNumber();
-            var num2 = MathUtils.generateRandomNumber();
-            var operator = getRandomMathOperator();
+    public String[] getConditionAndExpectedResult() {
+        var num1 = MathUtils.generateRandomNumber();
+        var num2 = MathUtils.generateRandomNumber();
+        var operator = getRandomMathOperator();
 
-            var shouldContinue = super.runRound(
-                num1 + " " + operator + " " + num2,
-                String.valueOf(executeMathOperation(operator, num1, num2))
-            );
-
-            if (!shouldContinue) {
-                break;
-            }
-        }
+        return new String[]{
+            num1 + " " + operator + " " + num2,
+            String.valueOf(executeMathOperation(operator, num1, num2))
+        };
     }
 
     private String getRandomMathOperator() {

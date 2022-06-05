@@ -1,5 +1,7 @@
 package hexlet.code;
 
-public interface Game extends Engine {
+public interface Game {
     void start();
+
+    String[] getConditionAndExpectedResult();
 }

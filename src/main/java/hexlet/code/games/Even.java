@@ -1,35 +1,29 @@
 package hexlet.code.games;
 
-import hexlet.code.GameEngine;
+import hexlet.code.Engine;
 import hexlet.code.Game;
 import hexlet.code.util.GameUtils;
 import hexlet.code.util.MathUtils;
 
-public final class Even extends GameEngine implements Game {
-
+public final class Even implements Game {
     public static final int GAME_CODE = 2;
 
+    private static final String RULES = "Answer '"
+        + GameUtils.POSITIVE_ANSWER
+        + "' if number even otherwise answer '"
+        + GameUtils.NEGATIVE_ANSWER + "'.";
+
+    public String[] getConditionAndExpectedResult() {
+        var num = MathUtils.generateRandomNumber();
+        var condition = String.valueOf(num);
+        var expectedValue = GameUtils.formatAnswerToUserFormat(MathUtils.isEven(num));
+
+        return new String[] {condition, expectedValue};
+    }
+
     public void start() {
-        greet();
+        System.out.println(RULES);
 
-        System.out.println(
-            "Answer '"
-            + GameUtils.POSITIVE_ANSWER
-            + "' if number even otherwise answer '"
-            + GameUtils.NEGATIVE_ANSWER + "'."
-        );
-
-        for (var i = 0; i < ROUNDS_COUNT; i++) {
-            var num = MathUtils.generateRandomNumber();
-
-            var shouldContinue = super.runRound(
-                String.valueOf(num),
-                GameUtils.formatAnswerToUserFormat(MathUtils.isEven(num))
-            );
-
-            if (!shouldContinue) {
-                break;
-            }
-        }
+        Engine.startGame(this);
     }
 }

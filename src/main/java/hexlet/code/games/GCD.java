@@ -1,29 +1,27 @@
 package hexlet.code.games;
 
-import hexlet.code.GameEngine;
+import hexlet.code.Engine;
 import hexlet.code.Game;
 import hexlet.code.util.MathUtils;
 
-public final class GCD extends GameEngine implements Game {
+public final class GCD implements Game {
     public static final int GAME_CODE = 4;
 
+    private static final String RULES = "Find the greatest common divisor of given numbers.";
+
     public void start() {
-        greet();
+        System.out.println(RULES);
 
-        System.out.println("Find the greatest common divisor of given numbers.");
+        Engine.startGame(this);
+    }
 
-        for (var i = 0; i < ROUNDS_COUNT; i++) {
-            var num1 = MathUtils.generateRandomNumber();
-            var num2 = MathUtils.generateRandomNumber();
+    public String[] getConditionAndExpectedResult() {
+        var num1 = MathUtils.generateRandomNumber();
+        var num2 = MathUtils.generateRandomNumber();
 
-            var shouldContinue = super.runRound(
-                num1 + " " + num2,
-                String.valueOf(MathUtils.gcd(num1, num2))
-            );
-
-            if (!shouldContinue) {
-                break;
-            }
-        }
+        return new String[]{
+            num1 + " " + num2,
+            String.valueOf(MathUtils.gcd(num1, num2))
+        };
     }
 }

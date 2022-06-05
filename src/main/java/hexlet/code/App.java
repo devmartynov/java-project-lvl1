@@ -17,8 +17,8 @@ public class App {
         var gameCode = scanner.nextInt();
         System.out.println();
 
-        if (gameCode == GameEngine.GREET_CODE) {
-            GameEngine.greet();
+        if (gameCode == Engine.GREET_CODE) {
+            Engine.greetUser();
         } else {
             GameFactory factory = new ConsoleGameFactory();
 

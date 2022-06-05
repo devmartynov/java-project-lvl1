@@ -1,31 +1,29 @@
 package hexlet.code.games;
 
-import hexlet.code.GameEngine;
+import hexlet.code.Engine;
 import hexlet.code.Game;
 import hexlet.code.util.GameUtils;
 import hexlet.code.util.MathUtils;
 
-public final class Prime extends GameEngine implements Game {
+public final class Prime implements Game {
     public static final int GAME_CODE = 6;
 
     public static final int MAX_RANDOM_VALUE = 30;
 
+    private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
     public void start() {
-        greet();
+        System.out.println(RULES);
 
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        Engine.startGame(this);
+    }
 
-        for (var i = 0; i < ROUNDS_COUNT; i++) {
-            var num = MathUtils.generateRandomNumber(MAX_RANDOM_VALUE);
+    public String[] getConditionAndExpectedResult() {
+        var num = MathUtils.generateRandomNumber(MAX_RANDOM_VALUE);
 
-            var shouldContinue = super.runRound(
-                String.valueOf(num),
-                GameUtils.formatAnswerToUserFormat(MathUtils.isPrime(num))
-            );
-
-            if (!shouldContinue) {
-                break;
-            }
-        }
+        return new String[]{
+            String.valueOf(num),
+            GameUtils.formatAnswerToUserFormat(MathUtils.isPrime(num))
+        };
     }
 }
